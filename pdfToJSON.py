@@ -24,8 +24,8 @@ def web_scraper(filename):
 
     filename = text_blocks[0]["paragraph"] + ".jsonl"
     
-    with open(filename, "w") as outfile:
-        for i in range(1,len(text_blocks)):
-            outfile.write(json.dumps(text_blocks[i]) + "\n")
+    with jsonlines.open(filename, mode="w") as outfile:
+        for item in text_blocks:
+            outfile.write(json.dumps(item) + "\n")
 
 web_scraper(sys.arv[1])
