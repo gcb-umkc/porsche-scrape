@@ -23,6 +23,8 @@ def web_scraper(filename):
                     text_blocks.append(dict)  
 
     filename = text_blocks[0]["paragraph"] + ".jsonl"
+    filename = filename.replace("\n", "")
+    filename = filename.replace(":", "")
     
     with jsonlines.open(filename, mode="w") as outfile:
         for item in text_blocks:
