@@ -3,7 +3,7 @@ The base URL specifies the newsroom website.
 base = 'https://newsroom.porsche.com'
 ```
 
-Then it uses requests to get a response from the newsroom website. 
+Then it uses Requests to get a response from the newsroom website. 
 ```python
 reponse = requests.get(base)
 html = reponse.text
